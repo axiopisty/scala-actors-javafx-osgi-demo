@@ -1,0 +1,60 @@
+group = 'client'
+version = '1.0.0-SNAPSHOT'
+
+def miglayoutVer = '4.2'
+
+def importPackages =
+  '  akka.actor' +
+    ', akka.actor.dungeon' +
+    ', akka.event' +
+    ', akka.osgi' +
+    ', javafx.application' +
+    ', javafx.beans' +
+    ', javafx.collections' +
+    ', javafx.fxml' +
+    ', javafx.geometry' +
+    ', javafx.scene' +
+    ', javafx.scene.control' +
+    ', javafx.scene.image' +
+    ', javafx.scene.layout' +
+    ', javafx.scene.paint' +
+    ', javafx.scene.shape' +
+    ', javafx.stage' +
+    ', net.miginfocom.layout' +
+    ', org.osgi.framework' +
+    ', org.tbee.javafx.scene.layout' +
+    ', org.tbee.javafx.scene.layout.fxml' +
+    ', scala' +
+    ', scala.collection' +
+    ', scala.reflect' +
+    ', scala.runtime'
+
+apply plugin: 'idea'
+apply plugin: 'scala'
+apply plugin: 'osgi'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.apache.felix:org.apache.felix.framework:4.2.1'
+  compile 'org.scala-lang:scala-library:2.10.2'
+  compile 'com.typesafe.akka:akka-osgi_2.10:2.2.1'
+  compile "com.miglayout:miglayout-core:$miglayoutVer"
+  compile "com.miglayout:miglayout-javafx:$miglayoutVer"
+}
+
+jar {
+  manifest {
+    name = "client (OSGi bundle)"
+    
+    instruction 'Bundle-Vendor', 'Company'
+    instruction 'Bundle-Description', 'Client (OSGi bundle)'
+    
+    instruction 'Private-Package', 'client'
+    instruction 'Bundle-Activator', 'client.ClientActivator'
+
+    instruction 'Import-Package', importPackages
+  }
+}

@@ -99,7 +99,7 @@ How to build and run the project:
 =================================
 $ cd client
 $ gradle build
-$ cp build/libs/client-1.0-SNAPSHOT.jar ../app/bundle/
+$ cp build/libs/client-1.0.0-SNAPSHOT.jar ../app/bundle/
 $ cd ../app
 $ java -jar bin/felix.jar
 

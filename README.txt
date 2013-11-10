@@ -9,9 +9,9 @@ System Setup:
 =============
 To build this project you must set the following environment variables:
 
-JAVA_HOME - This should point to the root of the JDK installation directory.
-GRADLE_HOME - This should point to the root of the GRADLE installation directory.
-SCALA_HOME - This should point to the root of the SCALA installation directory.
+JAVA_HOME - The root of the JDK installation directory.
+GRADLE_HOME - The root of the GRADLE installation directory.
+SCALA_HOME - The root of the SCALA installation directory.
 
 NOTE: This project requires that the jfxrt.jar file be relocated inside 
       the $JAVA_HOME directory as follows:
